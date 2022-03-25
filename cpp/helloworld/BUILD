@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+package(
+    default_visibility = ["//visibility:public"],
+)
+
 licenses(["notice"])
 
 cc_binary(
@@ -19,8 +23,8 @@ cc_binary(
     srcs = ["greeter_client.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -29,8 +33,8 @@ cc_binary(
     srcs = ["greeter_async_client.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -39,8 +43,8 @@ cc_binary(
     srcs = ["greeter_async_client2.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -49,8 +53,8 @@ cc_binary(
     srcs = ["greeter_callback_client.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -59,8 +63,8 @@ cc_binary(
     srcs = ["xds_greeter_client.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "//protos:helloworld_cc_grpc",
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
     ],
@@ -71,9 +75,9 @@ cc_binary(
     srcs = ["greeter_server.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//:grpc++_reflection",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "@com_github_grpc_grpc//:grpc++_reflection",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -82,8 +86,8 @@ cc_binary(
     srcs = ["greeter_async_server.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -92,9 +96,9 @@ cc_binary(
     srcs = ["greeter_callback_server.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//:grpc++_reflection",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "@com_github_grpc_grpc//:grpc++_reflection",
+        "//protos:helloworld_cc_grpc",
     ],
 )
 
@@ -103,10 +107,10 @@ cc_binary(
     srcs = ["xds_greeter_server.cc"],
     defines = ["BAZEL_BUILD"],
     deps = [
-        "//:grpc++",
-        "//:grpc++_reflection",
-        "//:grpcpp_admin",
-        "//examples/protos:helloworld_cc_grpc",
+        "@com_github_grpc_grpc//:grpc++",
+        "@com_github_grpc_grpc//:grpc++_reflection",
+        "@com_github_grpc_grpc//:grpcpp_admin",
+        "//protos:helloworld_cc_grpc",
         "@com_google_absl//absl/flags:flag",
         "@com_google_absl//absl/flags:parse",
     ],
